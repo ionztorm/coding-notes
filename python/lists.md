@@ -4,16 +4,23 @@
 
 - [Lists](#lists)
   - [Basics](#basics)
+    - [Define a List](#define-a-list)
+    - [Adding and Removing Items](#adding-and-removing-items)
+    - [Looping Through a List](#looping-through-a-list)
   - [List Slicing](#list-slicing)
   <!--toc:end-->
 
 ## Basics
+
+### Define a List
 
 - Lists are defined using [].
 
 ```py
 list_name = [item1, item2, item3]
 ```
+
+### Adding and Removing Items
 
 - Add items to the list using `.append()`
 
@@ -50,6 +57,8 @@ del list_name[1]
 ```py
 list_name.pop(1)
 ```
+
+### Looping Through a List
 
 - Loop through the list using a for loop.
 
