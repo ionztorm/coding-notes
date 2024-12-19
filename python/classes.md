@@ -98,6 +98,80 @@ leon = Person("Leon", "Lonsdale")
 leon.full_name() # "Leon Lonsdale"
 ```
 
+## Class Methods
+
+Class methods are methods that are bound to the class itself, rather than to an instance of the class. They are defined using the `@classmethod` decorator.
+
+```python
+class Person:
+    species = "human" # class variable
+
+    def __init__(self, first_name, last_name):
+        self.first_name = first_name # instance variable
+        self.last_name = last_name # instance variable
+
+    def full_name(self):
+        return f"{self.first_name} {self.last_name}"
+
+    @classmethod
+    def from_full_name(cls, full_name):
+        first_name, last_name = full_name.split(" ")
+        return cls(first_name, last_name)
+```
+
+Class methods are used when a method needs access to the class itself, rather than to an instance of the class.
+
+```python
+leon = Person.from_full_name("Leon Lonsdale")
+leon.full_name() # "Leon Lonsdale"
+```
+
+## Static Methods
+
+Static methods are methods that are not bound to the class or an instance of the class. They are defined using the `@staticmethod` decorator.
+
+
+```python
+class Person:
+    species = "human" # class variable
+
+    def __init__(self, first_name, last_name):
+        self.first_name = first_name # instance variable
+        self.last_name = last_name # instance variable
+
+    def full_name(self):
+        return f"{self.first_name} {self.last_name}"
+
+    @classmethod
+    def from_full_name(cls, full_name):
+        first_name, last_name = full_name.split(" ")
+        return cls(first_name, last_name)
+
+    @staticmethod
+    def is_adult(age):
+        return age >= 18
+```
+They are used when a method does not need access to the class or instance, and can be called without creating an instance of the class.
+
+```python
+Person.is_adult(21) # True
+```
+
+## Property Decorators
+
+Property decorators are used to define properties in a class that behave like attributes, but are computed dynamically.
+
+```python
+class Person:
+    def __init__(self, first_name, last_name):
+        self.first_name = first_name
+        self.last_name = last_name
+
+    @property
+    def full_name(self):
+        return f"{self.first_name} {self.last_name}"
+``` 
+
 ## Inheritance
 
 Inheritance is a way to create a new class that inherits the properties and methods of an existing class. The new class is called a subclass, and the existing class is called a superclass.
@@ -108,3 +182,5 @@ class Student(Person):
         super().__init__(first_name, last_name)
         self.student_id = student_id
 ```
+
+
