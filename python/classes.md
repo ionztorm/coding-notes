@@ -183,4 +183,50 @@ class Student(Person):
         self.student_id = student_id
 ```
 
+## Classes as Class Variables
 
+Class variables and private variables can be used to store instances of other classes.
+
+```python
+class Address:
+    def __init__(self, street, city, state, zip_code):
+        self.street = street
+        self.city = city
+        self.state = state
+        self.zip_code = zip_code
+
+class Person:
+    def __init__(self, first_name, last_name, address):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.address = Address(**address)
+
+## ** unpacks the dictionary into keyword arguments. So, if you have a dictionary like this:
+## address = {'street': '123 Main St', 'city': 'Springfield', 'state': 'IL', 'zip_code': '62701'}
+## You can pass it to the Address constructor like this: 
+## address = Address(**address)
+``` 
+
+We can access a person's address and address properties like this:
+
+```python
+address = {
+    'street': '123 Main St',
+    'city': 'Springfield',
+    'state': 'IL',
+    'zip_code': '62701'
+}
+
+leon = Person("Leon", "Lonsdale", address)
+leon.address.city # "Springfield"
+
+# If accessing the address properties within the person class, you can use the self keyword:
+class Person:
+    def __init__(self, first_name, last_name, address):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.address = Address(**address)
+
+    def full_address(self):
+        return f"{self.address.street}, {self.address.city}, {self.address.state} {self.address.zip_code}"
+```
