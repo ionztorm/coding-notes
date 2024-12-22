@@ -43,7 +43,6 @@ more <file> # view contents of a file 1 page/line at a time
 cat <file> <file> # display file contents
 ```
 
-```
 
 ## File Searching
 ```bash
@@ -91,7 +90,4 @@ kill -9 <pid> # force kill a process by process id
 
 ```bash
 export VAR=value # set an environment variable
-```
-
-```
 ```
