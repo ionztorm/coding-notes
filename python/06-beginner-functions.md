@@ -1,3 +1,4 @@
+
 # Functions and While Loops
 
 ## Functions
@@ -27,21 +28,6 @@ def greet():
 ```python
 greet()
 # Output: Hello
-```
-
-### Function Parameters
-
-- Functions can take parameters.
-- A parameter is a value that the function expects you to pass when you call it.
-- Parameters are defined inside the parentheses of the function definition.
-- When calling a function with parameters, you pass the values inside the parentheses.
-
-```python
-def greet(name):
-    print(f"Hello {name}")
-
-greet("Leon")
-# Output: Hello Leon
 ```
 
 ## Code Blocks and Indentation
